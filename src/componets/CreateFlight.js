@@ -1,7 +1,41 @@
 import React, { Component } from "react";
 
 export class CreateFlight extends Component {
-  //TODO: bring in the planes data from the server and loop through them as values for
+    constructor() {
+        super();
+        this.state = {
+        flightnumber: '',
+        date: '',
+        departure: '',
+        arrival: '',
+        plane: ''
+      };
+      this._handleChange = this._handleChange.bind(this);
+      this._handleSubmit = this._handleSubmit.bind(this);
+    }
+
+    _handleSubmit(event){
+        event.preventDefault();
+        this.props.onSubmit( this.state)
+        this.setState({
+        flightNumber: '',
+        date: '',
+        departure: '',
+        arrival: '',
+        plane: ''
+      })
+    }
+
+    _handleChange(event) {
+      let value = event.target.value;
+      this.setState({[event.target.name]: value
+    });
+    console.log({[event.target.name]: value
+  });
+  }
+
+
+
   render() {
     return (
       <div>
@@ -33,7 +67,7 @@ export class CreateFlight extends Component {
 
           <label>
             Plane:
-            <select>
+            <select name="plane">
               <option value="" selected>
                 -
               </option>
