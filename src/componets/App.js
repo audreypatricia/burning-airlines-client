@@ -16,6 +16,9 @@ function App() {
           <Route exact path="/search">
             <SearchFlight />
           </Route>
+          <Route exact path="/search">
+            <CreatePlane />
+          </Route>
         </Switch>
       </div>
     </Router>
