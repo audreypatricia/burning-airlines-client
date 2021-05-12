@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 
 const SERVER_FLIGHTS_URL = "http://localhost:3000/flights.json";
 
@@ -125,10 +126,8 @@ export class CreateFlight extends Component {
               <option value="" selected>
                 -
               </option>
-              <option value="A380">Airbus A380</option>
-              <option selected value="A320">
-                Airbus A320
-              </option>
+              <option value="VG100">VG100</option>
+              <option value="QA100">QA100</option>
             </select>
           </label>
 
