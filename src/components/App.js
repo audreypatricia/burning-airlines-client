@@ -5,8 +5,6 @@ import SelectSeat from "./SelectSeat";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./Navigation";
 import CreatePlane from "./CreatePlane";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 function App() {
   return (
     <Router>
@@ -14,23 +12,16 @@ function App() {
         <Navigation />
         <p> Burning Airline Reservation</p>
         <Switch>
-          <div>
-            <Route exact path="/">
-              <Home />
-            </Route>
-          </div>
-          <div>
-            <Route exact path="/search">
-              <SearchFlight />
-            </Route>
-          </div>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/search">
+            <SearchFlight />
+          </Route>
 
 
-<<<<<<< HEAD
-=======
           <Route path="/search/:id" component={SelectSeat} />
 
->>>>>>> d3bf3403ddd78bc573fb8a31b4bf9cdae49bd9a7
           <Route exact path="/createFlight">
             <CreateFlight />
           </Route>
@@ -38,6 +29,7 @@ function App() {
           <Route exact path="/createPlane">
             <CreatePlane />
           </Route>
+
         </Switch>
       </div>
     </Router>
