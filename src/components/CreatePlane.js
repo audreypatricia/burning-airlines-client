@@ -29,11 +29,11 @@ class CreatePlane extends Component {
         this.setState({
           airplanes: results.data
         });
-<<<<<<< HEAD:src/componets/CreatePlane.js
+
         // setTimeout(fetchAirplanes, 4000); // recursion: setInterval is a luxury
-=======
+
         setTimeout(fetchAirplanes, 1000); // recursion: setInterval is a luxury
->>>>>>> db4b075361800c5e77210bb91ab1c40469bcc021:src/components/CreatePlane.js
+
       });
     };
     fetchAirplanes();
