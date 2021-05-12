@@ -37,7 +37,7 @@ const FlightList = (props) => {
         </div>
         <div className="flight_number">
           <h4>Flight</h4>
-          { props.flights.map( (f) => <p key={f.id}>{ f.flight }</p>)}
+          { props.flights.map( (f) => <p key={f.id}>{ f.id }</p>)}
         </div>
         <div className="flight_from_to">
           <h4>from-to</h4>
@@ -45,6 +45,7 @@ const FlightList = (props) => {
         </div>
         <div className="flight_plane">
           <h4>Plane</h4>
+          { props.flights.map( (f) => <p key={f.id}>{ f.airplane_id }</p>)}
 
         </div>
       </div>
