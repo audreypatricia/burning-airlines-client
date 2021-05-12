@@ -35,7 +35,7 @@ class SearchFlight extends Component {
       <div>
         <SearchForm onSubmit={ this.fetchFlights }/>
         <FlightList flights={ this.state.flights }/>
-        <CreatePlane />
+        
       </div>
     );
   }
