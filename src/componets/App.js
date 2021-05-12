@@ -1,5 +1,6 @@
 import SearchFlight from "./SearchFlight";
 import Home from "./Home";
+import SelectSeat from "./SelectSeat";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./Navigation";
 
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/search">
             <SearchFlight />
           </Route>
+          <Route path="/search/:id" component={SelectSeat} />
         </Switch>
       </div>
     </Router>
