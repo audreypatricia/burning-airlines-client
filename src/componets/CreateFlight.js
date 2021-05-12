@@ -33,6 +33,7 @@ export class CreateFlight extends Component {
           flight_from: results.data.flight_from,
           flight_to: results.data.flight_to,
           plane: results.data.plane,
+
         });
         // setTimeout(fetchFligts, 4000); // recursion: setInterval is a luxury
       });
@@ -78,6 +79,7 @@ export class CreateFlight extends Component {
       flight_from: this.state.flight_from,
       flight_to: this.state.flight_to,
       plane: this.state.plane,
+
     };
     console.log(data);
 

@@ -31,7 +31,8 @@ class FlightList extends Component {
         </div>
         <div className="flight_number">
           <h4>Flight</h4>
-            { this.props.flights.map( (f) => <Link to={'search/' + f.id} key={f.id}>{f.id}</Link> )}
+            { this.props.flights.map( (f) => <Link to={ 'search/' + f.id} key={f.id} >{f.id}</Link> )}
+
         </div>
         <div className="flight_from_to">
           <h4>from-to</h4>

@@ -29,7 +29,7 @@ class CreatePlane extends Component {
           row: results.data.row,
           column: results.data.column,
         });
-        setTimeout(fetchAirplanes, 4000); // recursion: setInterval is a luxury
+        // setTimeout(fetchAirplanes, 4000); // recursion: setInterval is a luxury
       });
     };
     fetchAirplanes();

@@ -19,8 +19,8 @@ function App() {
             <SearchFlight />
           </Route>
 
-          <Route path="/search/:id" component={SelectSeat} />
 
+          <Route path="/search/:id" component={SelectSeat} />
 
           <Route exact path="/createFlight">
             <CreateFlight />
