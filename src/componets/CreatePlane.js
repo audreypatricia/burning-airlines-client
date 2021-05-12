@@ -37,12 +37,10 @@ class CreatePlane extends Component {
 
   _handleRow(event) {
       this.setState(state => ({ ...state, row: event.target.value}));
-      //this.setState({ row: event.target.value });
   }
 
   _handleColumn(event) {
       this.setState(state => ({ ...state, column: event.target.value}));
-      //this.setState({ column: event.target.value });
   }
 
   _handleSubmit(event){
@@ -53,26 +51,19 @@ class CreatePlane extends Component {
       column: 0,
     })
   }
+
   _handleCreate(event) {
     const data = {
            name: this.state.name,
            row: this.state.row,
            column: this.state.column
           }
+          console.log(data);
 
           axios.post(SERVER_AIRPLANE_URL, data, {headers: {
           'Content-Type': 'application/json',
           },})
   }
-
-  //   _handleCreate (event) {
-  //   axios.post(SERVER_AIRPLANE_URL, { name:name, row:row, column: column }).then((response) => {
-  //     // Add a new secret to the collection of secrets without mutation.
-  //     this.setState({ name: [...this.state.name, response.data]});
-  //     this.setState({ row: [...this.state.row, response.data]});
-  //     this.setState({ column: [...this.state.column, response.data]});
-  //   })
-  // }
 
   render() {
     return(
@@ -80,13 +71,13 @@ class CreatePlane extends Component {
         <form onSubmit={ this._handleSubmit }>
           <h1> New Airplane</h1>
           <h3>Plane name</h3>
-          <input onChange={this._handleName} placeholder="plane name"/>
+          <input onChange={this._handleName} placeholder="plane name" />
 
           <h3>Row</h3>
-          <input onChange={this._handleRow} type="number" placeholder="rows"/>
+          <input onChange={this._handleRow} type="number" placeholder="rows" />
 
          <h3>Column</h3>
-         <input onChange={this._handleColumn} type="number" placeholder="columns"/>
+         <input onChange={this._handleColumn} type="number" placeholder="columns" />
         <input onClick={this._handleCreate}type="submit" value="Create Airplane" />
         </form>
       </div>
