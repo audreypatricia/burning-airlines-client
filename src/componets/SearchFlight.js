@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SearchForm from './SearchForm';
 import FlightList from './FlightList';
+import CreatePlane from './CreatePlane';
 
 const SERVER_FLIGHTS_URL = "http://localhost:3000/flights.json";
 
@@ -28,6 +29,7 @@ class SearchFlight extends Component {
         Search Flight feature coming soon
         <SearchForm onSubmit={ this.fetchFlights }/>
         <FlightList flights={ this.state.flights }/>
+        <CreatePlane />
       </div>
     );
   }

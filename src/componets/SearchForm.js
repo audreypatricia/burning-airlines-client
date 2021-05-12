@@ -40,7 +40,6 @@ class SearchForm extends Component {
           </label>
           <input type="submit" value="search" />
         </form>
-
       </div>
     );
   }
