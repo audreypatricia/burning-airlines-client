@@ -1,5 +1,5 @@
 import SearchFlight from "./SearchFlight";
-import CreatePlane from "./CreatePlane";
+import CreateFlight from "./CreateFlight";
 import Home from "./Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./Navigation";
@@ -17,8 +17,13 @@ function App() {
           <Route exact path="/search">
             <SearchFlight />
           </Route>
-          <Route exact path="/CreatePlane">
+<<<<<<< HEAD
+          <Route exact path="/createFlight">
+            <CreateFlight />
+=======
+          <Route exact path="/search">
             <CreatePlane />
+>>>>>>> 4c166326b4cf8c0f76c4fffbaf18cdb716088b5b
           </Route>
         </Switch>
       </div>
