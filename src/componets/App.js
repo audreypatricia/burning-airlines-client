@@ -17,8 +17,13 @@ function App() {
           <Route exact path="/search">
             <SearchFlight />
           </Route>
+<<<<<<< HEAD
           <Route exact path="/createFlight">
             <CreateFlight />
+=======
+          <Route exact path="/search">
+            <CreatePlane />
+>>>>>>> 4c166326b4cf8c0f76c4fffbaf18cdb716088b5b
           </Route>
         </Switch>
       </div>
