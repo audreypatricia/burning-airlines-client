@@ -4,6 +4,8 @@ import Home from "./Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./Navigation";
 import CreatePlane from "./CreatePlane";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   return (
     <Router>
@@ -11,20 +13,28 @@ function App() {
         <Navigation />
         <p> Burning Airline Reservation</p>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/search">
-            <SearchFlight />
-          </Route>
+          <div>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </div>
+          <div>
+            <Route exact path="/search">
+              <SearchFlight />
+            </Route>
+          </div>
 
-          <Route exact path="/createFlight">
-            <CreateFlight />
-          </Route>
+          <div>
+            <Route exact path="/createFlight">
+              <CreateFlight />
+            </Route>
+          </div>
 
-          <Route exact path="/createPlane">
-            <CreatePlane />
-          </Route>
+          <div>
+            <Route exact path="/createPlane">
+              <CreatePlane />
+            </Route>
+          </div>
         </Switch>
       </div>
     </Router>
