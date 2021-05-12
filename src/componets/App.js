@@ -3,7 +3,7 @@ import CreateFlight from "./CreateFlight";
 import Home from "./Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./Navigation";
-import CreatePlane from './CreatePlane';
+import CreatePlane from "./CreatePlane";
 function App() {
   return (
     <Router>
@@ -17,15 +17,12 @@ function App() {
           <Route exact path="/search">
             <SearchFlight />
           </Route>
-<<<<<<< HEAD
-          <Route exact path="/search">
-=======
 
           <Route exact path="/createFlight">
+            <CreateFlight />
           </Route>
 
           <Route exact path="/createPlane">
->>>>>>> 4239ff8cb5a9a0fbe6e05b03486fd15b0e5ddc31
             <CreatePlane />
           </Route>
         </Switch>
