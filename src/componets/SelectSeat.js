@@ -38,11 +38,11 @@ class PlaneMap extends Component {
       .fill()
       .map(_ => array.splice(0, columns))
 
-      console.log(result); //2
+      console.log(result);
 
       return(
 
-        <div className="planeMap">
+        <div>
           { result.map( (s) => <div>{s}<br/></div>)}
         </div>
       );
@@ -86,12 +86,13 @@ class SelectSeat extends Component {
     this.setState({
       seat_selection: copySeatSelection,
     })
-    console.log(JSON.stringify(this.state.seat_selection)); //1
-    // setTimeout( function(){ }, 3000);
+    console.log(JSON.stringify(this.state.seat_selection));
+
+    // TODO: send a put request to update data
     axios.put(`http://localhost:3000/flights/${this.props.match.params.id}.json`, {
-      seat_selection: JSON.stringify(copySeatSelection),
+      seat_selection: JSON.stringify(this.state.seat_selection), // do i need to join array into text?
     }).then((result) => {
-      console.log(result); // 3
+      console.log(result);
     });
 
   }
@@ -101,21 +102,18 @@ class SelectSeat extends Component {
     let planeInfo;
     if(this.state.dataPresent === true){
       planeMap = <PlaneMap onClick={(i) => this._handleClick(i) } rows={this.state.flight.airplane.row} columns={ this.state.flight.airplane.column} seatSelection={this.state.seat_selection}/>;
-      planeInfo = <h2>{this.state.flight.date}, Flight {this.state.flight.id}, from ({this.state.flight.flight_from}) to ({this.state.flight.flight_to}) </h2>
+      planeInfo = <h2>{this.state.flight.date}, FLIGHT{this.state.flight.id}, FROM {this.state.flight.flight_from} TO {this.state.flight.flight_to} </h2>
     } else {
-      planeMap = <h3> Plane map not ready, please click button above so we remember the details of the plane you selected </h3>;
-      planeInfo = "";
+      planeMap = <p> Plane map not ready, please click button so we remember which plane you selected </p>;
     }
 
     return(
-      <div className="seatSelection">
+      <div>
 
-        <h2> Hello from the select seat page for plane id: {this.props.match.params.id} </h2>
-        <button className="remember_flight" onClick={this._fetchFlightData}> Confirm flight </button>
-        {planeInfo}
+        <p> Hello from the select seat page {this.props.match.params.id} </p>
+
+        <button onClick={this._fetchFlightData}> Confirm flight </button>
         {planeMap}
-
-
 
       </div>
     );
