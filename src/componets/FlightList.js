@@ -25,20 +25,20 @@ class FlightList extends Component {
   render() {
     return (
       <div>
-        <div id="FlightList" className="flight_date">
+        <div className="flight_date">
           <h4>Date</h4>
           { this.props.flights.map( (f) => <p key={f.id}>{ f.date }</p>)}
         </div>
-        <div id="FlightList" className="flight_number">
-          <h4 id="FlightHeading">Flight</h4>
+        <div className="flight_number">
+          <h4>Flight</h4>
             { this.props.flights.map( (f) => <Link to={ 'search/' + f.id} key={f.id} >{f.id}</Link> )}
 
         </div>
-        <div id="FlightList" className="flight_from_to">
+        <div className="flight_from_to">
           <h4>from-to</h4>
           { this.props.flights.map( (f) => <p key={f.id}>{ f.flight_from } - { f.flight_to }</p>)}
         </div>
-        <div id="FlightList" className="flight_plane">
+        <div className="flight_plane">
           <h4>Plane</h4>
           { this.props.flights.map( (f) => <p key={f.id}>{ f.airplane.name }</p>)}
 

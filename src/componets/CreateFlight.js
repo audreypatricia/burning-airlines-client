@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Form from 'react-bootstrap/Form';
 
 const SERVER_FLIGHTS_URL = "http://localhost:3000/flights.json";
 
@@ -8,12 +7,14 @@ export class CreateFlight extends Component {
   constructor() {
     super();
     this.state = {
+      flightnumber: "",
       date: "",
       flight_from: "",
       flight_to: "",
       plane: "",
     };
     this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleFlightnumber = this._handleFlightnumber.bind(this);
     this._handleCreate = this._handleCreate.bind(this);
     this._handleDeparture = this._handleDeparture.bind(this);
     this._handleArrival = this._handleArrival.bind(this);
@@ -27,15 +28,21 @@ export class CreateFlight extends Component {
       axios.get(SERVER_FLIGHTS_URL).then((results) => {
         console.log(results);
         this.setState({
+          flightnumber: results.data.flightnumber,
           date: results.data.date,
           flight_from: results.data.flight_from,
           flight_to: results.data.flight_to,
           plane: results.data.plane,
+
         });
         // setTimeout(fetchFligts, 4000); // recursion: setInterval is a luxury
       });
     };
     fetchFligts();
+  }
+
+  _handleFlightnumber(event) {
+    this.setState((state) => ({ ...state, flightnumber: event.target.value }));
   }
 
   _handleDate(event) {
@@ -72,6 +79,7 @@ export class CreateFlight extends Component {
       flight_from: this.state.flight_from,
       flight_to: this.state.flight_to,
       plane: this.state.plane,
+
     };
     console.log(data);
 
@@ -84,13 +92,20 @@ export class CreateFlight extends Component {
 
   render() {
     return (
-      <div className="form-group">
+      <div>
         Create Flight
         <form onSubmit={this._handleSubmit}>
           <label>
+            Flight Number
+            <input
+              onChange={this._handleFlightnumber}
+              placeholder="Flight Number"
+            />
+          </label>
+
+          <label>
             From
             <input
-              className="form-control"
               onChange={this._handleDeparture}
               placeholder="Departure City"
             />
@@ -98,12 +113,12 @@ export class CreateFlight extends Component {
 
           <label>
             To
-            <input className="form-control" onChange={this._handleArrival} placeholder="Arrival City" />
+            <input onChange={this._handleArrival} placeholder="Arrival City" />
           </label>
 
           <label>
             Date
-            <input className="form-control" type="date" onChange={this._handleDate} />
+            <input type="date" onChange={this._handleDate} />
           </label>
 
           <label>
@@ -112,16 +127,14 @@ export class CreateFlight extends Component {
               <option value="" selected>
                 -
               </option>
-              <option value="BA100">BA100</option>
-              <option value="BA282">BA282</option>
-              <option value="BA780">BA780</option>
-              <option value="BA622">BA622</option>
+              <option value="A380">Airbus A380</option>
+              <option selected value="A320">
+                Airbus A320
+              </option>
             </select>
           </label>
 
           <input
-            className="form-control"
-            id="submit"
             onClick={this._handleCreate}
             type="submit"
             value="Create Flight"
