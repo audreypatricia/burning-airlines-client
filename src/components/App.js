@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="App">
         <Navigation />
-        <p id= "heading"> Burning Airline Reservation</p>
+        <p id= "heading"> BURNING AIRLINES</p>
         <Switch>
           <Route exact path="/">
             <Home />
