@@ -52,10 +52,27 @@ export class CreateFlight extends Component {
 
   _handlePlane(event) {
     this.setState((state) => ({ ...state, plane: event.target.value }));
+    console.log(event.target.value);
   }
 
   _handleSubmit(event) {
     event.preventDefault();
+
+    const data = {
+      flightnumber: this.state.flightnumber,
+      date: this.state.date,
+      flight_from: this.state.flight_from,
+      flight_to: this.state.flight_to,
+      plane: this.state.plane,
+    };
+    console.log(data);
+
+    axios.post(SERVER_FLIGHTS_URL, data, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    
     this.setState({
       flightNumber: "",
       date: "",
@@ -80,6 +97,7 @@ export class CreateFlight extends Component {
         "Content-Type": "application/json",
       },
     });
+
   }
 
   render() {
@@ -108,10 +126,8 @@ export class CreateFlight extends Component {
 
           <label>
             Plane:
-            <select onChange={this._handlePlane}>
-              <option value="" selected>
-                -
-              </option>
+            <select value={this.state.plane} onChange={this._handlePlane}>
+              <option value="" >-</option>
               <option value="BA100">BA100</option>
               <option value="BA282">BA282</option>
               <option value="BA780">BA780</option>
@@ -122,7 +138,7 @@ export class CreateFlight extends Component {
           <input
             className="form-control"
             id="submit"
-            onClick={this._handleCreate}
+            // onClick={this._handleCreate}
             type="submit"
             value="Create Flight"
           />

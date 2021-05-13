@@ -19,10 +19,10 @@ class SearchFlight extends Component {
       console.log(`fetching flights from ${from} to ${to}`);
       axios.get(SERVER_FLIGHTS_URL).then( (result) => {
         console.log(result.data);
-        console.log(result.data[0].airplane.name);
+        // console.log(result.data[0].airplane.name);
         let filteredResults = [];
         for(let i = 0; i < result.data.length; i++){
-          if(result.data[i].flight_from.toLowerCase() === from.toLowerCase() && result.data[i].flight_to.toLowerCase() === to.toLowerCase() ){
+          if(result.data[i].flight_from === from && result.data[i].flight_to.toLowerCase() === to.toLowerCase() ){
             filteredResults.push(result.data[i]);
           }
         }

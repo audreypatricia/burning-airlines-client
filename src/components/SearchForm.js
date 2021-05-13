@@ -16,6 +16,7 @@ class SearchForm extends Component {
     this.setState({
       [event.target.name]: event.target.value
     });
+    console.log(this.state.from);
   }
 
   _handleSubmit(event){
