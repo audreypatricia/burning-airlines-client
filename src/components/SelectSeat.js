@@ -61,7 +61,7 @@ class SelectSeat extends Component {
   }
 
   _fetchFlightData() {
-    axios.get(`http://localhost:3000/flights/${this.props.match.params.id}.json`).then( (result) => {
+    axios.get(`https://burningairline.herokuapp.com/flights/${this.props.match.params.id}.json`).then( (result) => {
       console.log(result.data.airplane);
 
       const totalSquares = result.data.airplane.row * result.data.airplane.column;
@@ -79,20 +79,31 @@ class SelectSeat extends Component {
   _handleClick(i) {
     const current = this.state.seat_selection;
     const copySeatSelection = current.slice();
+
     const name = prompt("Enter name", " ");
     console.log(name);
     copySeatSelection[i] = name;
-    console.log(i);
+
+    console.log(copySeatSelection);
     this.setState({
       seat_selection: copySeatSelection,
     })
-    console.log(JSON.stringify(this.state.seat_selection)); //1
+    console.log(copySeatSelection);
+    // console.log(JSON.stringify(this.state.seat_selection)); //1
     // setTimeout( function(){ }, 3000);
-    axios.put(`http://localhost:3000/flights/${this.props.match.params.id}.json`, {
+    axios.put(`https://burningairline.herokuapp.com/flights/${this.props.match.params.id}.json`, {
       seat_selection: JSON.stringify(copySeatSelection),
     }).then((result) => {
       console.log(result); // 3
     });
+    console.log(JSON.stringify(this.state.seat_selection));
+
+    // axios.put(`https://burningairline.herokuapp.com/flights/${this.props.match.params.id}.json`, {
+    //   seat_selection: "please work",
+    //   date: "42/05/2021"
+    // }).then((result) => {
+    //   console.log(result); // 3
+    // });
 
   }
 
