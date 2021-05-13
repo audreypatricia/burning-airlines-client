@@ -98,13 +98,6 @@ class SelectSeat extends Component {
     });
     console.log(JSON.stringify(this.state.seat_selection));
 
-    // axios.put(`https://burningairline.herokuapp.com/flights/${this.props.match.params.id}.json`, {
-    //   seat_selection: "please work",
-    //   date: "42/05/2021"
-    // }).then((result) => {
-    //   console.log(result); // 3
-    // });
-
   }
 
   render() {
