@@ -40,7 +40,7 @@ class SearchForm extends Component {
             To:
             <input id= "SearchForm" className="form-control" type="text" name="to" value={ this.state.to } onChange={ this._handleChange } required/>
           </label>
-          <input type="submit" value="search" />
+          <input className="form-control" type="submit" value="search" id="submit" />
         </form>
       </div>
     );
