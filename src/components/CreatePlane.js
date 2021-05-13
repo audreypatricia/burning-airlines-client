@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Form from "react-bootstrap/Form";
-const SERVER_AIRPLANE_URL = "http://localhost:3000/airplanes.json";
+import Form from 'react-bootstrap/Form';
+const SERVER_AIRPLANE_URL = "https://burningairline.herokuapp.com/airplanes.json";
 
 class CreatePlane extends Component {
   constructor() {

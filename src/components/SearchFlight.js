@@ -4,7 +4,7 @@ import SearchForm from './SearchForm';
 import FlightList from './FlightList';
 import CreatePlane from './CreatePlane';
 
-const SERVER_FLIGHTS_URL = "http://localhost:3000/flights.json";
+const SERVER_FLIGHTS_URL = "https://burningairline.herokuapp.com/flights.json";
 
 class SearchFlight extends Component {
   constructor(){
@@ -35,7 +35,7 @@ class SearchFlight extends Component {
       <div>
         <SearchForm onSubmit={ this.fetchFlights }/>
         <FlightList flights={ this.state.flights }/>
-        
+
       </div>
     );
   }
