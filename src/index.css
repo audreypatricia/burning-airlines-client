@@ -1,5 +1,5 @@
 body {
-  background-image: url("images/image2.jpeg");
+  background-image: url("images/image3.jpeg");
   margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -49,6 +49,27 @@ label {
   display: block !important;
 }
 
-#SearchForm {
+#FlightList {
 
+ margin-left: 10px;
+ margin-top: 50px;
+ display: inline-block;
+ width: 200px;
+ height: 150px;
+ padding: 5px;
+}
+
+#heading {
+  color: #990000!important;
+  text-align: center;
+  font-size: 3em;
+}
+p {
+  font-size: 1.3em;
+  color: #ffe6cc !important;
+}
+
+h4 {
+  font-size: 2em !important;
+  color: #000066;
 }
