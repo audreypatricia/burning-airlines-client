@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Form from 'react-bootstrap/Form';
 
 class SearchForm extends Component {
   constructor(){
@@ -28,15 +29,15 @@ class SearchForm extends Component {
 
   render() {
     return(
-      <div>
+      <div className="form-group">
         <form onSubmit={ this._handleSubmit }>
           <label>
             From:
-            <input type="text" name="from" value={ this.state.from } onChange={ this._handleChange }  required/>
+            <input id= "SearchForm" className="form-control" type="text" name="from" value={ this.state.from } onChange={ this._handleChange }  required/>
           </label>
           <label>
             To:
-            <input type="text" name="to" value={ this.state.to } onChange={ this._handleChange } required/>
+            <input id= "SearchForm" className="form-control" type="text" name="to" value={ this.state.to } onChange={ this._handleChange } required/>
           </label>
           <input type="submit" value="search" />
         </form>

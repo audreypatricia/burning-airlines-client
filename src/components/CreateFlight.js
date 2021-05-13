@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Form from 'react-bootstrap/Form';
 
 const SERVER_FLIGHTS_URL = "http://localhost:3000/flights.json";
 
@@ -83,12 +84,13 @@ export class CreateFlight extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form-group">
         Create Flight
         <form onSubmit={this._handleSubmit}>
           <label>
             From
             <input
+              className="form-control"
               onChange={this._handleDeparture}
               placeholder="Departure City"
             />
@@ -96,12 +98,12 @@ export class CreateFlight extends Component {
 
           <label>
             To
-            <input onChange={this._handleArrival} placeholder="Arrival City" />
+            <input className="form-control" onChange={this._handleArrival} placeholder="Arrival City" />
           </label>
 
           <label>
             Date
-            <input type="date" onChange={this._handleDate} />
+            <input className="form-control" type="date" onChange={this._handleDate} />
           </label>
 
           <label>
@@ -118,6 +120,8 @@ export class CreateFlight extends Component {
           </label>
 
           <input
+            className="form-control"
+            id="submit"
             onClick={this._handleCreate}
             type="submit"
             value="Create Flight"
